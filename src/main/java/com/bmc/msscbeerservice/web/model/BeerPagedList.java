@@ -1,0 +1,22 @@
+package com.bmc.msscbeerservice.web.model;
+
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
+
+/**
+ * @author yeganeh
+ * @created 30/04/2023 - 11:41 AM
+ */
+public class BeerPagedList extends PageImpl<BeerDto> {
+
+
+    public BeerPagedList(List<BeerDto> content, Pageable pageable, long total) {
+        super(content, pageable, total);
+    }
+
+    public BeerPagedList(List<BeerDto> content) {
+        super(content);
+    }
+}
