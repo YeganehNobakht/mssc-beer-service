@@ -12,7 +12,7 @@ import java.util.UUID;
  * @created 30/04/2023 - 11:52 AM
  */
 @RestController
-@RequestMapping("/api/b1/beer")
+@RequestMapping("/api/v1/beer")
 public class BeerController {
 
     @GetMapping("/{beerId}")
