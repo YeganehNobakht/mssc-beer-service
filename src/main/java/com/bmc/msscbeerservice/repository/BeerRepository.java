@@ -1,2 +1,9 @@
-package com.bmc.msscbeerservice.repository;public interface BeerRepository {
+package com.bmc.msscbeerservice.repository;
+
+import com.bmc.msscbeerservice.domain.Beer;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+import java.util.UUID;
+
+public interface BeerRepository extends PagingAndSortingRepository<Beer, UUID> {
 }
