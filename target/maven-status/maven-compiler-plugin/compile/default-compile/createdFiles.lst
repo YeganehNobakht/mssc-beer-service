@@ -1,6 +1,0 @@
-com\bmc\msscbeerservice\web\model\BeerStyleEnum.class
-com\bmc\msscbeerservice\web\model\BeerDto$BeerDtoBuilder.class
-com\bmc\msscbeerservice\web\controller\BeerController.class
-com\bmc\msscbeerservice\MsscBeerServiceApplication.class
-com\bmc\msscbeerservice\web\model\BeerDto.class
-com\bmc\msscbeerservice\web\model\BeerPagedList.class
