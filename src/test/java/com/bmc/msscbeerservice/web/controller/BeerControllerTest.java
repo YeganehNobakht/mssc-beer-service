@@ -1,18 +1,22 @@
 package com.bmc.msscbeerservice.web.controller;
 
 import com.bmc.msscbeerservice.bootstrap.BeerLoader;
+import com.bmc.msscbeerservice.services.BeerService;
 import com.bmc.msscbeerservice.web.model.BeerDto;
 import com.bmc.msscbeerservice.web.model.BeerStyleEnum;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -31,14 +35,21 @@ class BeerControllerTest {
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     ObjectMapper objectMapper;
 
+    @MockBean
+    BeerService beerService;
+
     @Test
     void getBeerById() throws Exception {
+        given(beerService.getById(any())).willReturn(getValidBeerDto());
+
         mockMvc.perform(get("/api/v1/beer/" + UUID.randomUUID().toString()))
                 .andExpect(status().isOk());
     }
 
     @Test
     void saveBeer() throws Exception {
+        given(beerService.getById(any())).willReturn(getValidBeerDto());
+
         BeerDto beerDto = getValidBeerDto();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
@@ -50,6 +61,8 @@ class BeerControllerTest {
 
     @Test
     void updateBeerById() throws Exception {
+        given(beerService.getById(any())).willReturn(getValidBeerDto());
+
         BeerDto beerDto = getValidBeerDto();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
@@ -66,7 +79,7 @@ class BeerControllerTest {
                 .beerName("My Beer")
                 .beerStyle(BeerStyleEnum.ALE)
                 .price(new BigDecimal("2.99"))
-                .upc(123L)
+                .upc(BeerLoader.BEER_1_UPC)
                 .build();
     }
 }

@@ -1,10 +1,15 @@
+com\bmc\msscbeerservice\web\controller\NotFoundException.class
 com\bmc\msscbeerservice\web\model\BeerStyleEnum.class
+com\bmc\msscbeerservice\services\BeerService.class
 com\bmc\msscbeerservice\domain\Beer.class
+com\bmc\msscbeerservice\web\controller\BeerController.class
+com\bmc\msscbeerservice\web\mapper\BeerMapperImpl.class
 com\bmc\msscbeerservice\MsscBeerServiceApplication.class
 com\bmc\msscbeerservice\web\controller\MvcExceptionHandler.class
 com\bmc\msscbeerservice\web\mapper\DateMapper.class
 com\bmc\msscbeerservice\bootstrap\BeerLoader.class
 com\bmc\msscbeerservice\repository\BeerRepository.class
+com\bmc\msscbeerservice\services\BeerServiceImpl.class
 com\bmc\msscbeerservice\web\model\BeerDto$BeerDtoBuilder.class
 com\bmc\msscbeerservice\domain\Beer$BeerBuilder.class
 com\bmc\msscbeerservice\web\model\BeerDto.class
