@@ -1,7 +1,5 @@
 com\bmc\msscbeerservice\web\model\BeerStyleEnum.class
 com\bmc\msscbeerservice\domain\Beer.class
-com\bmc\msscbeerservice\web\controller\BeerController.class
-com\bmc\msscbeerservice\web\mapper\BeerMapperImpl.class
 com\bmc\msscbeerservice\MsscBeerServiceApplication.class
 com\bmc\msscbeerservice\web\controller\MvcExceptionHandler.class
 com\bmc\msscbeerservice\web\mapper\DateMapper.class
