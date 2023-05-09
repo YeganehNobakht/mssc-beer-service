@@ -6,8 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-
-@Component
+//data.sql file can do this instead;
+//@Component
 public class BeerLoader implements CommandLineRunner {
 
     public static final String BEER_1_UPC = "063124200036";
@@ -30,7 +30,7 @@ public class BeerLoader implements CommandLineRunner {
         if (beerRepository.count() == 0) {
             beerRepository.save(Beer.builder()
                     .beerName("Mango Bobs")
-                    .beerStile("IPA")
+                    .beerStyle("IPA")
                     .quantityToBrew(200)
                     .upc(BEER_1_UPC)
                     .price(new BigDecimal("12.95"))
@@ -40,7 +40,7 @@ public class BeerLoader implements CommandLineRunner {
 
             beerRepository.save(Beer.builder()
                     .beerName("Galaxy Cat")
-                    .beerStile("PALE_ALE")
+                    .beerStyle("PALE_ALE")
                     .quantityToBrew(200)
                     .upc(BEER_2_UPC)
                     .price(new BigDecimal("12.95"))
@@ -49,7 +49,7 @@ public class BeerLoader implements CommandLineRunner {
 
             beerRepository.save(Beer.builder()
                     .beerName("No Hammers On The Bar")
-                    .beerStile("PALE_ALE")
+                    .beerStyle("PALE_ALE")
                     .quantityToBrew(200)
                     .upc(BEER_3_UPC)
                     .price(new BigDecimal("12.95"))
