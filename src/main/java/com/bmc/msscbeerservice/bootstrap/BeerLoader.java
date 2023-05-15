@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.UUID;
+
 //data.sql file can do this instead;
 //@Component
 public class BeerLoader implements CommandLineRunner {
@@ -13,6 +15,9 @@ public class BeerLoader implements CommandLineRunner {
     public static final String BEER_1_UPC = "063124200036";
     public static final String BEER_2_UPC = "063124300019";
     public static final String BEER_3_UPC = "083783375213";
+
+    public static final UUID BEER_1_UUID = UUID.fromString("0a818933-087d-47f2-ad83-2f986ed087eb");
+
 
     private final BeerRepository beerRepository;
 
