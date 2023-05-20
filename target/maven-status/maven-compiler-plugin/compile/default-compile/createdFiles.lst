@@ -9,6 +9,7 @@ com\bmc\msscbeerservice\repository\BeerRepository.class
 com\bmc\msscbeerservice\services\BeerServiceImpl.class
 com\bmc\msscbeerservice\web\model\BeerDto$BeerDtoBuilder.class
 com\bmc\msscbeerservice\domain\Beer$BeerBuilder.class
+com\bmc\msscbeerservice\config\CacheConfig.class
 com\bmc\msscbeerservice\services\inventory\BeerInventoryDto$BeerInventoryDtoBuilder.class
 com\bmc\msscbeerservice\services\inventory\BeerInventoryService.class
 com\bmc\msscbeerservice\web\mapper\BeerMapper.class

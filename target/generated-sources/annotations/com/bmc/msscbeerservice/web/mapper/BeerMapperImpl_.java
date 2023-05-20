@@ -1,7 +1,9 @@
 package com.bmc.msscbeerservice.web.mapper;
 
 import com.bmc.msscbeerservice.domain.Beer;
+import com.bmc.msscbeerservice.domain.Beer.BeerBuilder;
 import com.bmc.msscbeerservice.web.model.BeerDto;
+import com.bmc.msscbeerservice.web.model.BeerDto.BeerDtoBuilder;
 import com.bmc.msscbeerservice.web.model.BeerStyleEnum;
 import javax.annotation.processing.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-05-15T11:53:06+0330",
-    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 11.0.14 (Oracle Corporation)"
+    date = "2023-05-20T18:08:02+0330",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.14 (Oracle Corporation)"
 )
 @Component
 @Qualifier("delegate")
@@ -26,7 +28,7 @@ public class BeerMapperImpl_ implements BeerMapper {
             return null;
         }
 
-        BeerDto.BeerDtoBuilder beerDto = BeerDto.builder();
+        BeerDtoBuilder beerDto = BeerDto.builder();
 
         beerDto.id( beer.getId() );
         if ( beer.getVersion() != null ) {
@@ -49,7 +51,7 @@ public class BeerMapperImpl_ implements BeerMapper {
             return null;
         }
 
-        BeerDto.BeerDtoBuilder beerDto = BeerDto.builder();
+        BeerDtoBuilder beerDto = BeerDto.builder();
 
         beerDto.id( beer.getId() );
         if ( beer.getVersion() != null ) {
@@ -72,7 +74,7 @@ public class BeerMapperImpl_ implements BeerMapper {
             return null;
         }
 
-        Beer.BeerBuilder beer = Beer.builder();
+        BeerBuilder beer = Beer.builder();
 
         beer.id( beerDto.getId() );
         if ( beerDto.getVersion() != null ) {
