@@ -1,9 +1,7 @@
 package com.bmc.msscbeerservice.events;
 
 import com.bmc.msscbeerservice.web.model.BeerDto;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -12,10 +10,10 @@ import java.io.Serializable;
  * @created 24/05/2023
  */
 @Data
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class BeerEvent implements Serializable {
     static final long serialVersionId = -12352148965212L;
-    private final BeerDto beerDto;
-
+    private BeerDto beerDto;
 }
