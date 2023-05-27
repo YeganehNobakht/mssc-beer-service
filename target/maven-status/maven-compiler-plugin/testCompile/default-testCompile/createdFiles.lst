@@ -1,0 +1,3 @@
+com\bmc\msscbeerservice\services\inventory\BeerInventoryRestTemplateServiceImplTest.class
+com\bmc\msscbeerservice\MsscBeerServiceApplicationTests.class
+com\bmc\msscbeerservice\web\controller\BeerControllerTest.class

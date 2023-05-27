@@ -1,4 +1,4 @@
-package com.bmc.msscbeerservice.services;
+package com.bmc.msscbeerservice.services.brewing;
 
 import com.bmc.msscbeerservice.config.JmsConfig;
 import com.bmc.msscbeerservice.domain.Beer;
