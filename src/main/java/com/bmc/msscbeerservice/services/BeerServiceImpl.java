@@ -4,9 +4,9 @@ import com.bmc.msscbeerservice.domain.Beer;
 import com.bmc.msscbeerservice.repository.BeerRepository;
 import com.bmc.msscbeerservice.web.controller.NotFoundException;
 import com.bmc.msscbeerservice.web.mapper.BeerMapper;
-import com.bmc.msscbeerservice.web.model.BeerDto;
-import com.bmc.msscbeerservice.web.model.BeerPagedList;
-import com.bmc.msscbeerservice.web.model.BeerStyleEnum;
+import com.bmc.sfg.brewery.model.BeerDto;
+import com.bmc.sfg.brewery.model.BeerPagedList;
+import com.bmc.sfg.brewery.model.BeerStyleEnum;
 import io.micrometer.core.instrument.util.StringUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
@@ -14,7 +14,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.rmi.NotBoundException;
 import java.util.UUID;
 import java.util.stream.Collectors;
 

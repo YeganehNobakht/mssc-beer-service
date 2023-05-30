@@ -2,7 +2,7 @@ package com.bmc.msscbeerservice.services.brewing;
 
 import com.bmc.msscbeerservice.config.JmsConfig;
 import com.bmc.msscbeerservice.domain.Beer;
-import com.bmc.msscbeerservice.events.BrewBeerEvent;
+import com.bmc.sfg.brewery.model.events.BrewBeerEvent;
 import com.bmc.msscbeerservice.repository.BeerRepository;
 import com.bmc.msscbeerservice.services.inventory.BeerInventoryService;
 import com.bmc.msscbeerservice.web.mapper.BeerMapper;

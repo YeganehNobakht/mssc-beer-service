@@ -2,13 +2,12 @@ package com.bmc.msscbeerservice.bootstrap;
 
 import com.bmc.msscbeerservice.domain.Beer;
 import com.bmc.msscbeerservice.repository.BeerRepository;
-import com.bmc.msscbeerservice.web.model.BeerStyleEnum;
+import com.bmc.sfg.brewery.model.BeerStyleEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 @RequiredArgsConstructor
 @Component

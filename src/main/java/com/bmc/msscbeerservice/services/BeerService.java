@@ -1,8 +1,8 @@
 package com.bmc.msscbeerservice.services;
 
-import com.bmc.msscbeerservice.web.model.BeerDto;
-import com.bmc.msscbeerservice.web.model.BeerPagedList;
-import com.bmc.msscbeerservice.web.model.BeerStyleEnum;
+import com.bmc.sfg.brewery.model.BeerDto;
+import com.bmc.sfg.brewery.model.BeerPagedList;
+import com.bmc.sfg.brewery.model.BeerStyleEnum;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.UUID;

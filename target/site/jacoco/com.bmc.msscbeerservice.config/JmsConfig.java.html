@@ -15,14 +15,15 @@ import org.springframework.jms.support.converter.MessageType;
 <span class="fc" id="L15">public class JmsConfig {</span>
 
     public static final String BREWING_REQUEST_QUEUE = &quot;brewing-request&quot;;
+    public static final String NEW_INVENTORY_QUEUE = &quot;new-inventory&quot;;
 
     @Bean // Serialize message content to json using TextMessage
     public MessageConverter jacksonJmsMessageConverter(ObjectMapper objectMapper) {
-<span class="fc" id="L21">        MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();</span>
-<span class="fc" id="L22">        converter.setTargetType(MessageType.TEXT);</span>
-<span class="fc" id="L23">        converter.setTypeIdPropertyName(&quot;_type&quot;);</span>
-<span class="fc" id="L24">        converter.setObjectMapper(objectMapper);</span>
-<span class="fc" id="L25">        return converter;</span>
+<span class="fc" id="L22">        MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();</span>
+<span class="fc" id="L23">        converter.setTargetType(MessageType.TEXT);</span>
+<span class="fc" id="L24">        converter.setTypeIdPropertyName(&quot;_type&quot;);</span>
+<span class="fc" id="L25">        converter.setObjectMapper(objectMapper);</span>
+<span class="fc" id="L26">        return converter;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
