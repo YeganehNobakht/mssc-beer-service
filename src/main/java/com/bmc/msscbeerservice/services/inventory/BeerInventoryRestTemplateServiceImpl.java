@@ -1,6 +1,7 @@
 package com.bmc.msscbeerservice.services.inventory;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Profile;
@@ -20,7 +21,7 @@ import java.util.UUID;
  */
 @Profile("!local-discovery")
 @Slf4j
-@ConfigurationProperties(prefix = "sfg.brewery", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "sfg.brewery", ignoreUnknownFields = true)
 @Component
 public class BeerInventoryRestTemplateServiceImpl implements BeerInventoryService {
 
@@ -29,8 +30,13 @@ public class BeerInventoryRestTemplateServiceImpl implements BeerInventoryServic
 
     private String beerInventoryServiceHost;
 
-    public BeerInventoryRestTemplateServiceImpl(RestTemplateBuilder restTemplateBuilder) {
-        this.restTemplate = restTemplateBuilder.build();
+
+    public BeerInventoryRestTemplateServiceImpl(RestTemplateBuilder restTemplateBuilder,
+                                                @Value("${sfg.brewery.inventory-user}") String inventoryUser,
+                                                @Value("${sfg.brewery.inventory-password}") String inventoryPassword) {
+        this.restTemplate = restTemplateBuilder
+                .basicAuthentication(inventoryUser, inventoryPassword)
+                .build();
     }
 
     public void setBeerInventoryServiceHost(String beerInventoryServiceHost) {
@@ -44,7 +50,8 @@ public class BeerInventoryRestTemplateServiceImpl implements BeerInventoryServic
 
         ResponseEntity<List<BeerInventoryDto>> responseEntity = restTemplate
                 .exchange(beerInventoryServiceHost + INVENTORY_PATH, HttpMethod.GET, null,
-                        new ParameterizedTypeReference<List<BeerInventoryDto>>(){}, (Object) beerId);
+                        new ParameterizedTypeReference<List<BeerInventoryDto>>() {
+                        }, (Object) beerId);
 
         //sum from inventory list
         Integer onHand = Objects.requireNonNull(responseEntity.getBody())
